@@ -1,5 +1,5 @@
 - name: configuring frontend component
-  hosts: front
+  hosts: frontend
   become: yes
   tasks:
   - name: diasbling the default nginx
