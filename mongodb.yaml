@@ -7,7 +7,7 @@
       src: mongod.repo
       dest: /etc/yum.repos.d/mongo.repo
 
-  - name: install mongodb server
+  - name: Install mongodb server
     ansible.builtin.dnf:
       name: mongodb-org
       state: present
@@ -16,7 +16,7 @@
     ansible.builtin.service:
       name: mongod
       state: started
-      enable: yes  
+      enabled: yes  
   
   - name: allow remote connections
     ansible.builtin.replace:
