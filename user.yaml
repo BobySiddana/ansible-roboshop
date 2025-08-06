@@ -52,6 +52,8 @@
       daemon_reload: true
 
   - name: start and enable user
+    tags:
+    - import
     ansible.builtin.service:
       name: user
       state: started
