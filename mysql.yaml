@@ -12,7 +12,7 @@
     - import
     ansible.builtin.service:
       name: mysqld
-      state: starte
+      state: started
       enabled: yes
 
   - name: setup root password
