@@ -51,10 +51,11 @@
     ansible.builtin.systemd_service:
       daemon_reload: true
 
-  - name: start and enable user
-    tags:
-    - import
-    ansible.builtin.service:
-      name: user
+  - name: Unmask the 'user' service
+    ansible.builtin.command: systemctl unmask user.service
+
+  - name: Enable and start the 'user' service
+    ansible.builtin.systemd:
+      name: user.service
       state: started
-      enabled: yes
+      enabled: true
